@@ -168,3 +168,18 @@
 .flex-between {
   @apply flex justify-between items-center;
 }
+
+.form_description {
+  height: 312px;
+}
+
+.landing-gradient-text {
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(to right, #7ff8f1, #64a3ee);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: 80px;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+}
