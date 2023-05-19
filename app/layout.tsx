@@ -20,7 +20,7 @@ const RootLayout = ({ children, session }: RootLayoutProps) => {
       <body>
         <Provider session={session}>
           <div className="main">
-            <div className="gradient" />
+            <div className="gradient"></div>
           </div>
           <main className="app">
             <Nav />
