@@ -25,7 +25,9 @@ const MyProfile = () => {
     console.log("handleedit");
   };
 
-  const handleDelete = async () => {};
+  const handleDelete = async () => {
+    console.log("handleDelete");
+  };
 
   return (
     <Profile
