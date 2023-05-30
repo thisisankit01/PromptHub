@@ -22,7 +22,7 @@ export const GET = async (request: Request, { params }) => {
 
 export const PATCH = async (request: Request, { params }) => {
   try {
-    connectToDB();
+    await connectToDB();
 
     const existingPrompt = await Prompt.findById(params.id);
 
@@ -41,5 +41,16 @@ export const PATCH = async (request: Request, { params }) => {
     return new Response(JSON.stringify(existingPrompt), { status: 200 });
   } catch (error) {
     return new Response("Failed to update prompt", { status: 504 });
+  }
+};
+
+export const DELETE = async (request: Request, { params }) => {
+  try {
+    await connectToDB();
+    await Prompt.findByIdAndDelete(params.id);
+
+    return new Response("Prompt Deleted successfully", { status: 200 });
+  } catch (error) {
+    return new Response("Failed to Deleted Prompt", { status: 500 });
   }
 };
