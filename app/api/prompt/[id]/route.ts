@@ -5,7 +5,10 @@
 import { connectToDB } from "@utils/database";
 import Prompt from "@models/prompt";
 
-export const GET = async (request: Request, { params }) => {
+export const GET = async (
+  request: Request,
+  { params }: { params: { id: string } }
+) => {
   try {
     await connectToDB();
 
@@ -20,17 +23,19 @@ export const GET = async (request: Request, { params }) => {
   }
 };
 
-export const PATCH = async (request: Request, { params }) => {
+export const PATCH = async (
+  request: Request,
+  { params }: { params: { id: string } }
+) => {
   try {
     await connectToDB();
 
     const existingPrompt = await Prompt.findById(params.id);
 
     if (!existingPrompt)
-      JSON.stringify(existingPrompt),
-        {
-          status: 404,
-        };
+      return new Response("Prompt not found", { status: 404 });
+
+    const { prompt, tag, description } = await request.json(); // Assuming tag is part of the request body
 
     existingPrompt.prompt = prompt;
     existingPrompt.tag = tag;
@@ -44,7 +49,10 @@ export const PATCH = async (request: Request, { params }) => {
   }
 };
 
-export const DELETE = async (request: Request, { params }) => {
+export const DELETE = async (
+  request: Request,
+  { params }: { params: { id: string } }
+) => {
   try {
     await connectToDB();
     await Prompt.findByIdAndDelete(params.id);

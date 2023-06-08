@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const Form = ({
+const CustomForm = ({
   type,
   post,
   setPost,
@@ -21,7 +21,7 @@ const Form = ({
         <div className="sm:grid sm:grid-flow-col gap-4">
           <label className="row-span-3">
             <span className="font-satoshi font-semibold text-base text-gray-700">
-              Prompt Description
+              Prompt Title
             </span>
 
             <textarea
@@ -29,7 +29,7 @@ const Form = ({
               onChange={(e) =>
                 setPost({ ...post, description: e.target.value })
               }
-              placeholder="Write description for your prompt here..."
+              placeholder="Write title for your prompt here..."
               required
               className="form_textarea form_description"
             />
@@ -88,4 +88,4 @@ const Form = ({
   );
 };
 
-export default Form;
+export default CustomForm;

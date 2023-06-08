@@ -4,9 +4,10 @@ import { useState, useEffect } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-import Profile from "@components/profile";
+import Profile from "@components/Profile";
 
 const MyProfile = () => {
+  const router = useRouter();
   const { data: session } = useSession();
 
   const [posts, setPosts] = useState<Array<string>>([]);
@@ -19,14 +20,15 @@ const MyProfile = () => {
     };
 
     if (session?.user?.id) fetchPost();
-  }, []);
+  }, [session?.user?.id]);
 
-  const handleEdit = async () => {
-    console.log("handleedit");
+  const handleEdit = async (post: any) => {
+    console.log(post);
+    router.push(`/update-prompt?id=${post._id}`);
   };
 
   const handleDelete = async () => {
-    console.log("handleDelete");
+    console.warn("are you sure to delete the Prompt ?");
   };
 
   return (
@@ -34,8 +36,8 @@ const MyProfile = () => {
       name="My"
       desc="Welcome to your personalized profile page"
       data={posts}
-      handleEdit={() => handleEdit}
-      handleDelete={() => handleDelete}
+      handleEdit={handleEdit}
+      handleDelete={handleDelete}
     />
   );
 };

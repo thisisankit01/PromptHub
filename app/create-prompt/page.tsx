@@ -4,9 +4,8 @@ import { useState } from "react";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 
-import Form from "@components/Form";
+import CustomForm from "@components/Form";
 import { FormEvent } from "react";
-import { Session } from "inspector";
 
 const CreatePrompt = () => {
   const router = useRouter();
@@ -48,7 +47,7 @@ const CreatePrompt = () => {
   console.log("hi");
 
   return (
-    <Form
+    <CustomForm
       type="Create"
       post={post}
       setPost={setPost}
