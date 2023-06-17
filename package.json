@@ -16,7 +16,6 @@
     "bcrypt": "^5.1.0",
     "million": "^2.3.3",
     "mongodb": "^5.5.0",
-    "mongoose": "^7.1.1",
     "next": "13.4.2",
     "next-auth": "^4.22.1",
     "postcss": "8.4.23",
@@ -24,5 +23,8 @@
     "react-dom": "18.2.0",
     "tailwindcss": "3.3.2",
     "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "mongoose": "^7.2.3"
   }
 }
