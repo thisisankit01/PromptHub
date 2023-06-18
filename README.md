@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# This is a nextjs based full stack wesbite. PromptHub is a promt sharing platform for all domains out there. User can signup through google and search for their desired prompts using search bar . User can also update and delete their prompts .
 
 ## Getting Started
 
@@ -18,18 +18,27 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+# Demo
 
-To learn more about Next.js, take a look at the following resources:
+> HomePage 
+![image](https://github.com/thisisankit01/PromptHub/assets/93221382/6000a98d-1a24-4763-9346-67ed3b8d87d8)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+> Login With Google
+![image](https://github.com/thisisankit01/PromptHub/assets/93221382/7c2a9f2a-d369-4740-9462-3a8250079965)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+> Profile
+![image](https://github.com/thisisankit01/PromptHub/assets/93221382/792dc910-5de3-4738-b9c8-c41d25a258f0)
 
-## Deploy on Vercel
+> creating a post
+![image](https://github.com/thisisankit01/PromptHub/assets/93221382/40051885-3c94-478c-8b77-563a1f53897a)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+> updating a post
+![image](https://github.com/thisisankit01/PromptHub/assets/93221382/3971eced-671b-4b3e-af53-63398c8ca026)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+> deleting the post
+![image](https://github.com/thisisankit01/PromptHub/assets/93221382/4a5eeca3-9929-4520-92ef-ee32229fe1bf)
+
+
+
+
 # PromptHub
