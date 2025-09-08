@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import ReadMore from "./ReadMore";
 import { useSession } from "next-auth/react";
 import { usePathname, useRouter } from "next/navigation";
 
@@ -11,6 +12,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
   const router = useRouter();
 
   const [copied, setCopied] = useState("");
+  const [isReadMore, setIsReadMore] = useState(false);
 
   const handleProfileClick = () => {
     console.log(post);
@@ -25,6 +27,10 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
     navigator.clipboard.writeText(post.prompt);
     setTimeout(() => setCopied(false), 3000);
   };
+
+  const handleReadMore = () => {
+    setIsReadMore(!isReadMore);
+  }
 
   return (
     <div className='prompt_card'>
@@ -65,7 +71,16 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
         </div>
       </div>
 
-      <p className='my-4 font-satoshi text-sm text-gray-700'>{post.prompt}</p>
+      <p className='my-4 font-satoshi text-sm text-gray-700'>
+        {post.prompt.length > 100 ? (
+          <>
+            {post.prompt.slice(0, 100)}
+            <span onClick={handleReadMore} className="hover:underline text-blue-500 cursor-pointer">...</span>
+          </>
+        ) : (
+          post.prompt
+        )}
+      </p>
       <p
         className='font-inter text-sm blue_gradient cursor-pointer'
         onClick={() => handleTagClick && handleTagClick(post.tag)}
@@ -89,6 +104,7 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
           </p>
         </div>
       )}
+      <ReadMore open={isReadMore} onClose={() => setIsReadMore(false)} prompt={post.prompt} />
     </div>
   );
 };
